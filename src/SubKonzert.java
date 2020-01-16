@@ -8,6 +8,17 @@ public class SubKonzert implements Ticket{
 		ausgabe();
 	}
 	
+	public SubKonzert(String eventLoc, String eventName) {
+		this(eventLoc,eventName, 500);
+		setEventLocation(eventLoc);
+		setEventName(eventName);
+	}
+	
+	public SubKonzert(String eventLoc) {
+		this(eventLoc,"Name", 233);
+		setEventLocation(eventLoc);
+	}
+	
 	public SubKonzert() {
 		this("Event Location", "Event Name", 100);
 	}
