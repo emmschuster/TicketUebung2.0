@@ -1,12 +1,19 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TicketsMain {
 
 	public static void main(String[] args) {
+		int antwort = 0;
 		Scanner sc = new Scanner(System.in);
 		TicketBasis shop = new TicketBasis();
-		System.out.println("Welche Art von Tickets soll angezeigt werden? \n1=Konzert\t2=Sport\t3=Theater\t4=Alle");
-		int antwort = sc.nextInt();
+		System.out.println("Welche Art von Tickets soll angezeigt werden? \n1=Konzert\t2=Sport\t\t3=Theater\t4=Alle");
+		try {
+			antwort = sc.nextInt();
+			throw new Error_notImIntervall(1, 4);
+		} catch (Error_notImIntervall e) {
+			System.out.println("rip");
+		}
 		switch (antwort) {
 		case 1:
 			SubKonzert k1 = new SubKonzert("Muenchen", "PapaRoach ft BodyCout", 100);
@@ -16,9 +23,9 @@ public class TicketsMain {
 			shop.bestellen(k2);
 			shop.bestellen(k3);
 			System.out.println("Anz Tickets zum auswählen " + shop.getAnz());
-			System.out.println("\nguenstigstes ticket:");
+			System.out.println("\nGuenstigstes ticket:");
 			shop.getGunstigstes();
-			System.out.println("teuerstes ticket:");
+			System.out.println("Teuerstes ticket:");
 			shop.getTeuerstes();
 			break;
 		case 2:

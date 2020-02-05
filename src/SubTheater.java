@@ -11,7 +11,7 @@ public class SubTheater implements Ticket{
 		public SubTheater() {
 			this("Event Location", "Event Name", 255);
 		}
-		
+
 		private String verantstalungsort;
 		
 		public void setEventLocation(String eventLocation) {
@@ -60,7 +60,4 @@ public class SubTheater implements Ticket{
 		public void calculateTicketPrice() {
 			ticketpreis = (Math.round(((SCHAUSPIELER+getBasicPrice())/ANZTICKETS)*MWST*100));
 		}
-	    
-
-	
 }
